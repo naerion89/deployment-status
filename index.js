@@ -32,7 +32,7 @@ async function run() {
             const params = {
                 ...context.repo,
                 state,
-                ref : this.ref
+                ref : this.ref,
             };
             if (env) {
                 params.environment = env;
