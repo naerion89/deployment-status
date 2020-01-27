@@ -24,13 +24,15 @@ async function run() {
         const envUrl = core.getInput("environment-url", {
             required: false
         });
-
+        const ref = core.getInput("ref", {
+            required: false
+        });
         const client = new github.GitHub(token);
         if (context.payload.deployment === undefined) {
             const params = {
                 ...context.repo,
-
                 state,
+                ref : this.ref
             };
             if (env) {
                 params.environment = env;
