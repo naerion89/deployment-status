@@ -24,7 +24,7 @@ async function run() {
         const envUrl = core.getInput("environment-url", {
             required: false
         });
-        const ref = core.getInput("ref", {
+        const githubRef = core.getInput("ref", {
             required: false
         });
         const client = new github.GitHub(token);
@@ -32,7 +32,7 @@ async function run() {
             const params = {
                 ...context.repo,
                 state,
-                ref : this.ref,
+                ref: githubRef,
             };
             if (env) {
                 params.environment = env;
