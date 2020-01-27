@@ -33,6 +33,7 @@ async function run() {
                 ...context.repo,
                 state,
                 ref: githubRef,
+                auto_merge: false,
             };
             if (env) {
                 params.environment = env;
