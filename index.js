@@ -34,6 +34,7 @@ async function run() {
                 state,
                 ref: githubRef,
                 auto_merge: false,
+                required_contexts: [],
             };
             if (env) {
                 params.environment = env;
